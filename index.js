@@ -1,9 +1,7 @@
 import { navBarComponent } from "./pages/components/navBar.js"
 import { cardComponent } from "./pages/components/cards.js"
 
-
-
-// Index
+// Arrays de productos
 const indexProducts = [
   {
     title: "Anillo único",
@@ -31,7 +29,6 @@ const indexProducts = [
   }
 ]
 
-// Marvel
 const marvelProducts = [
   {
     title: "Teseracto",
@@ -45,7 +42,7 @@ const marvelProducts = [
     title: "Guante del infinito",
     imageUrl: "../images/guanteInfinito.jpg",
     price: "$256.999,99",
-    oldPrice: "", // no tiene precio tachado
+    oldPrice: "",
     installments: "18 cuotas sin interés de $14.277,77",
     shipping: "Envío gratis"
   },
@@ -59,7 +56,6 @@ const marvelProducts = [
   }
 ]
 
-// Lord of the Rings
 const lotrProducts = [
   {
     title: "Anillo único",
@@ -73,7 +69,7 @@ const lotrProducts = [
     title: "Bastón de Gandalf el gris",
     imageUrl: "../images/bastonGandalf.jpg",
     price: "$109.200",
-    oldPrice: "", // no tiene precio tachado
+    oldPrice: "",
     installments: "12 cuotas sin interés de $9.100",
     shipping: "Envío gratis"
   },
@@ -87,7 +83,6 @@ const lotrProducts = [
   }
 ]
 
-// Back to the Future
 const backToFutureProducts = [
   {
     title: "Hoverboard",
@@ -101,7 +96,7 @@ const backToFutureProducts = [
     title: "Almanaque deportivo",
     imageUrl: "../images/sportsAlmanac.jpg",
     price: "$64.999",
-    oldPrice: "", // no tiene precio tachado
+    oldPrice: "",
     installments: "12 cuotas sin interés de $5.416,58",
     shipping: "Envío gratis"
   },
@@ -115,7 +110,7 @@ const backToFutureProducts = [
   }
 ]
 
-
+// Render dinámico
 window.addEventListener('load', () => {
   // Navbar
   const navBarContainer = document.querySelector('header')
@@ -123,20 +118,38 @@ window.addEventListener('load', () => {
     navBarContainer.innerHTML = navBarComponent
   }
 
-const path = window.location.pathname
-let products = []
+  // Detectar página actual
+  const path = window.location.pathname
+  let products = []
 
-if (path.endsWith("index.html") || path === "/") {
-  products = indexProducts
-} else if (path.endsWith("Marvel.html")) {
-  products = marvelProducts
-} else if (path.endsWith("LordOfRings.html")) {
-  products = lotrProducts
-} else if (path.endsWith("BackToFuture.html")) {
-  products = backToFutureProducts
-}
+  if (path.endsWith("index.html") || path === "/") {
+    products = indexProducts
+  } else if (path.endsWith("Marvel.html")) {
+    products = marvelProducts
+  } else if (path.endsWith("LordOfRings.html")) {
+    products = lotrProducts
+  } else if (path.endsWith("BackToFuture.html")) {
+    products = backToFutureProducts
+  }
 
-const container = document.getElementById("cardsContainer")
-if (container && products.length > 0) {
-  container.innerHTML = products.map(p => cardComponent(p)).join("")
-}})
+  // Renderizar cards
+  const container = document.getElementById("cardsContainer")
+  if (container && products.length > 0) {
+    container.innerHTML = products.map(p => cardComponent(p)).join("")
+
+    // Delegación de eventos para botones + y -
+    container.addEventListener("click", (e) => {
+      if (e.target.classList.contains("sumar")) {
+        const input = e.target.parentElement.querySelector(".cantidad")
+        input.value = parseInt(input.value) + 1
+      }
+      if (e.target.classList.contains("restar")) {
+        const input = e.target.parentElement.querySelector(".cantidad")
+        if (parseInt(input.value) > 1) {
+          input.value = parseInt(input.value) - 1
+        }
+      }
+    })
+  }
+})
+

@@ -1,4 +1,4 @@
-const url = 'http://127.0.0.1:5500/'
+const url = window.location.origin + "/";
 
 const navElements = [
     {title:'Home', link: `${url}index.html`},
