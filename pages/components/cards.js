@@ -1,0 +1,34 @@
+// components/cards.js
+
+export const cardComponent = (product) => {
+  return `
+    <div class="col">
+      <div class="card h-100">
+        <img src="${product.imageUrl}" 
+             class="card-img-top img-fluid" 
+             style="height: 300px; object-fit: stretch;" 
+             alt="${product.title}" />
+        <div class="card-body">
+          <h5 class="card-title">${product.title}</h5>
+          <p class="card-text text-danger fw-bold">
+            ${product.price} 
+            <span class="text-muted text-decoration-line-through">${product.oldPrice}</span>
+          </p>
+          <p class="text-success">${product.installments}</p>
+          <p class="text-info">${product.shipping}</p>
+
+          <div class="d-flex align-items-center mb-3">
+            <button class="btn btn-outline-secondary restar">−</button>
+            <input type="text" class="form-control mx-2 text-center cantidad" 
+                   value="1" style="width: 60px;" readonly>
+            <button class="btn btn-outline-secondary sumar">+</button>
+          </div>
+
+          <button class="btn btn-success w-100" onclick="agregarAlCarrito('${product.title}')">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+  `
+}
