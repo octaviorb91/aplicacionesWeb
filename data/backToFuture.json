@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Hoverboard",
+    "imageUrl": "../images/hoverBoard.png",
+    "price": "$12.170",
+    "oldPrice": "$14.950",
+    "installments": "9 cuotas sin interés de $1.352,22",
+    "shipping": "Envío gratis"
+  },
+  {
+    "title": "Almanaque deportivo",
+    "imageUrl": "../images/sportsAlmanac.jpg",
+    "price": "$64.999",
+    "oldPrice": "",
+    "installments": "12 cuotas sin interés de $5.416,58",
+    "shipping": "Envío gratis"
+  },
+  {
+    "title": "Condensador de flujo",
+    "imageUrl": "../images/condensadorDeFlujo.jpg",
+    "price": "$523.170",
+    "oldPrice": "$556.000",
+    "installments": "9 cuotas sin interés de $58.130",
+    "shipping": "Envío gratis"
+  }
+]

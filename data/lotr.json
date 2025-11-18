@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Anillo único",
+    "imageUrl": "../images/anillo.jpg",
+    "price": "$2.666.999,60",
+    "oldPrice": "$3.000.000",
+    "installments": "9 cuotas sin interés de $296.333,28",
+    "shipping": "Envío gratis"
+  },
+  {
+    "title": "Bastón de Gandalf el gris",
+    "imageUrl": "../images/bastonGandalf.jpg",
+    "price": "$109.200",
+    "oldPrice": "",
+    "installments": "12 cuotas sin interés de $9.100",
+    "shipping": "Envío gratis"
+  },
+  {
+    "title": "Luz de Eärendil",
+    "imageUrl": "../images/frascoGaladriel.jpg",
+    "price": "$58.600",
+    "oldPrice": "$65.000",
+    "installments": "9 cuotas sin interés de $6.511,11",
+    "shipping": "Envío gratis"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Teseracto",
+    "imageUrl": "../images/teseract.jpg",
+    "price": "$15.825.999,50",
+    "oldPrice": "$16.000.000",
+    "installments": "9 cuotas sin interés de $1.758.444,38",
+    "shipping": "Envío gratis"
+  },
+  {
+    "title": "Guante del infinito",
+    "imageUrl": "../images/guanteInfinito.jpg",
+    "price": "$256.999,99",
+    "oldPrice": "",
+    "installments": "18 cuotas sin interés de $14.277,77",
+    "shipping": "Envío gratis"
+  },
+  {
+    "title": "Mjolnir",
+    "imageUrl": "../images/mjolnir.jpg",
+    "price": "$125.999",
+    "oldPrice": "$150.000",
+    "installments": "6 cuotas sin interés de $20.999,83",
+    "shipping": "Envío gratis"
+  }
+]
