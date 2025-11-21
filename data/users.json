@@ -1,0 +1,14 @@
+[
+  {
+    "email": "beef@gmail.com",
+    "password": "1234",
+    "name": "Beef Tannen",
+    "photoUrl": "../images/beef.jpg"
+  },
+  {
+    "email": "thanos@gmail.com",
+    "password": "1234",
+    "name": "Thanos",
+    "photoUrl": "../images/thanos.jpeg"
+  }
+]

@@ -29,6 +29,12 @@ window.addEventListener('load', async () => {
   alert(`Producto agregado: ${title}`)
 }
 
+window.logout = () => {
+  sessionStorage.clear();
+  window.location.href = "../pages/InicioSesion.html";
+};
+
+
 
   // Renderizar cards
   const container = document.getElementById("cardsContainer")
@@ -49,4 +55,6 @@ window.addEventListener('load', async () => {
     })
   }
 })
+
+
 

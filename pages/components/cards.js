@@ -32,3 +32,23 @@ export const cardComponent = (product) => {
     </div>
   `
 }
+
+
+
+export const userCardComponent = (user) => {
+  return `
+    <div class="card text-center">
+      <img src="${user.photoUrl}" 
+           class="card-img-top rounded-circle mx-auto mt-3"
+           style="height: 150px; width: 150px; object-fit: cover;" 
+           alt="${user.name}" />
+      <div class="card-body">
+        <h5 class="card-title">Bienvenido, ${user.name} 👋</h5>
+        <button class="btn btn-primary mt-3 w-100" onclick="window.location.href='../index.html'">
+          Empezar a comprar
+        </button>
+      </div>
+    </div>
+  `;
+};
+

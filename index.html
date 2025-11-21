@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El emporio de las maravillas</title>
+    <title >El emporio de las maravillas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./images/iconEmporio.png">
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body data-bs-theme="dark">
@@ -24,7 +27,7 @@
     </header>
     
 
-    <h1 class="text-center my-4 fw-bold text-primary">El emporio de las maravillas</h1>
+    <h1 class="text-center my-4 fw-bold">El emporio de las maravillas</h1>
 
   <div class="container">
     <div id="cardsContainer" class="row row-cols-1 row-cols-md-3 g-4">
@@ -39,23 +42,6 @@
 
     <script type="module" src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script>
-        document.querySelectorAll(".sumar").forEach(btn => {
-            btn.addEventListener("click", () => {
-            const input = btn.parentElement.querySelector(".cantidad");
-            input.value = parseInt(input.value) + 1;
-            });
-        });
-
-        document.querySelectorAll(".restar").forEach(btn => {
-            btn.addEventListener("click", () => {
-            const input = btn.parentElement.querySelector(".cantidad");
-            if (parseInt(input.value) > 1) {
-                input.value = parseInt(input.value) - 1;
-            }
-            });
-        });
-    </script>
 
 </body>
 
