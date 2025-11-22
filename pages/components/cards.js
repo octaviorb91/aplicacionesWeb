@@ -1,4 +1,9 @@
 // components/cards.js
+import { addToCart } from "../../utils/localStorage.controller.js";
+
+const formatPrice = (price) => {
+  return `$${price.toLocaleString("es-AR")}`
+}
 
 export const cardComponent = (product) => {
   return `
@@ -11,11 +16,11 @@ export const cardComponent = (product) => {
         <div class="card-body">
           <h5 class="card-title">${product.title}</h5>
           <p class="card-text text-danger fw-bold">
-            ${product.price} 
-            <span class="text-muted text-decoration-line-through">${product.oldPrice}</span>
+            ${formatPrice(product.price)} 
+            ${product.oldPrice ? `<span class="text-muted text-decoration-line-through">${formatPrice(product.oldPrice)}</span>` : ""}
           </p>
-          <p class="text-success">${product.installments}</p>
-          <p class="text-info">${product.shipping}</p>
+          <p class="text-success">${product.installments || ""}</p>
+          <p class="text-info">${product.shipping || ""}</p>
 
           <div class="d-flex align-items-center mb-3">
             <button class="btn btn-outline-secondary restar">−</button>
@@ -24,7 +29,7 @@ export const cardComponent = (product) => {
             <button class="btn btn-outline-secondary sumar">+</button>
           </div>
 
-          <button class="btn btn-success w-100" onclick="agregarAlCarrito('${product.title}')">
+          <button class="btn btn-success w-100 add-to-cart">
             Agregar al carrito
           </button>
         </div>
@@ -32,8 +37,6 @@ export const cardComponent = (product) => {
     </div>
   `
 }
-
-
 
 export const userCardComponent = (user) => {
   return `
@@ -49,6 +52,6 @@ export const userCardComponent = (user) => {
         </button>
       </div>
     </div>
-  `;
-};
+  `
+}
 

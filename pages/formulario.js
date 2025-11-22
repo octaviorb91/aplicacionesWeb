@@ -1,21 +1,20 @@
-// formulario.js
-import { navBarComponent } from "../pages/components/navBar.js";
+import { navBarComponent } from "../pages/components/navBar.js"
 
 window.addEventListener("load", () => {
   // Navbar
-  const navBarContainer = document.querySelector("header");
+  const navBarContainer = document.querySelector("header")
   if (navBarContainer) {
-    navBarContainer.innerHTML = navBarComponent;
+    navBarContainer.innerHTML = navBarComponent
   }
 
-  // Capturar formulario
-  const form = document.querySelector("form");
+  // Formulario
+  const form = document.querySelector("form")
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const nombre = document.getElementById("txtNombre").value.trim();
-    const email = document.getElementById("txtEmail").value.trim();
-    const password = document.getElementById("txtPass").value.trim();
+    const nombre = document.getElementById("txtNombre").value.trim()
+    const email = document.getElementById("txtEmail").value.trim()
+    const password = document.getElementById("txtPass").value.trim()
 
     // Crear objeto usuario
     const newUser = {
@@ -23,12 +22,12 @@ window.addEventListener("load", () => {
       email: email,
       password: password,
       photoUrl: "../images/gollum.jpg" // imagen por defecto
-    };
+    }
 
     // Guardar en sessionStorage
-    sessionStorage.setItem("user", JSON.stringify(newUser));
+    sessionStorage.setItem("user", JSON.stringify(newUser))
 
     // Redirigir a user.html
-    window.location.href = "../privatePages/user.html";
-  });
-});
+    window.location.href = "../privatePages/user.html"
+  })
+})

@@ -1,31 +1,31 @@
-import { navBarComponent } from "../pages/components/navBar.js";
+import { navBarComponent } from "../pages/components/navBar.js"
 
 window.addEventListener("load", () => {
   // Navbar
-  const navBarContainer = document.querySelector("header");
-  if (navBarContainer) navBarContainer.innerHTML = navBarComponent;
+  const navBarContainer = document.querySelector("header")
+  if (navBarContainer) navBarContainer.innerHTML = navBarComponent
 
   // Formulario
-  const form = document.getElementById("loginForm");
-  const alertBox = document.getElementById("loginAlert"); // contenedor opcional para alertas
+  const form = document.getElementById("loginForm")
+  const alertBox = document.getElementById("loginAlert")
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const email = document.getElementById("email").value.trim()
+    const password = document.getElementById("password").value.trim()
 
     try {
-      const response = await fetch("../data/users.json");
-      const users = await response.json();
+      const response = await fetch("../data/users.json")
+      const users = await response.json()
 
-      const user = users.find(u => u.email === email && u.password === password);
+      const user = users.find(u => u.email === email && u.password === password)
 
       if (user) {
-        sessionStorage.setItem("user", JSON.stringify(user));
-        window.location.href = "../privatePages/user.html";
+        sessionStorage.setItem("user", JSON.stringify(user))
+        window.location.href = "../privatePages/user.html"
       } else {
-        // Mostrar error sin redirigir
+        // Mostrar error
         const message = "Usuario o contraseña incorrectos. Por favor, verificá los datos e intentá nuevamente.";
         if (alertBox) {
           alertBox.innerHTML = `
@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
               <div>${message}</div>
             </div>`;
         } else {
-          alert(message);
+          alert(message)
         }
       }
     } catch (error) {
@@ -45,15 +45,15 @@ window.addEventListener("load", () => {
           <div class="alert alert-warning d-flex align-items-center" role="alert">
             <i class="bi bi-exclamation-circle me-2"></i>
             <div>${message}</div>
-          </div>`;
+          </div>`
       } else {
-        alert(message);
+        alert(message)
       }
     }
-  });
-});
+  })
+})
 
 window.logout = () => {
-  sessionStorage.clear();
-  window.location.href = "../pages/InicioSesion.html";
-};
+  sessionStorage.clear()
+  window.location.href = "../pages/InicioSesion.html"
+}
